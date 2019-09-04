@@ -1,0 +1,68 @@
+import Aatrox from '../tftImages/championImages/Aatrox.jpg'
+import Ahri from '../tftImages/championImages/Ahri.jpg'
+import Akali from '../tftImages/championImages/Akali.jpg'
+import Anivia from '../tftImages/championImages/Anivia.jpg'
+import Ashe from '../tftImages/championImages/Ashe.jpg'
+import AurelionSol from '../tftImages/championImages/AurelionSol.jpg'
+import Blitzcrank from '../tftImages/championImages/Blitzcrank.jpg'
+import Brand from '../tftImages/championImages/Brand.jpg'
+import Braum from '../tftImages/championImages/Braum.jpg'
+import Camille from '../tftImages/championImages/Camille.jpg'
+import Chogath from '../tftImages/championImages/Chogath.jpg'
+import Darius from '../tftImages/championImages/Darius.jpg'
+import Draven from '../tftImages/championImages/Draven.jpg'
+import Elise from '../tftImages/championImages/Elise.jpg'
+import Evelynn from '../tftImages/championImages/Evelynn.jpg'
+import Fiora from '../tftImages/championImages/Fiora.jpg'
+import Gangplank from '../tftImages/championImages/Gangplank.jpg'
+import Garen from '../tftImages/championImages/Garen.jpg'
+import Gnar from '../tftImages/championImages/Gnar.jpg'
+import Graves from '../tftImages/championImages/Graves.jpg'
+import Jayce from '../tftImages/championImages/Jayce.jpg'
+import Jinx from '../tftImages/championImages/Jinx.jpg'
+import Karthus from '../tftImages/championImages/Karthus.jpg'
+import Kassadin from '../tftImages/championImages/Kassadin.jpg'
+import Katarina from '../tftImages/championImages/Katarina.jpg'
+import Kayle from '../tftImages/championImages/Kayle.jpg'
+import Kennen from '../tftImages/championImages/Kennen.jpg'
+import Khazix from '../tftImages/championImages/Khazix.jpg'
+import Kindred from '../tftImages/championImages/Kindred.jpg'
+import Leona from '../tftImages/championImages/Leona.jpg'
+import Lissandra from '../tftImages/championImages/Lissandra.jpg'
+import Lucian from '../tftImages/championImages/Lucian.jpg'
+import Lulu from '../tftImages/championImages/Lulu.jpg'
+import MissFortune from '../tftImages/championImages/MissFortune.jpg'
+import Mordekaiser from '../tftImages/championImages/Mordekaiser.jpg'
+import Morgana from '../tftImages/championImages/Morgana.jpg'
+import Nidalee from '../tftImages/championImages/Nidalee.jpg'
+import Pantheon from '../tftImages/championImages/Pantheon.jpg'
+import Poppy from '../tftImages/championImages/Poppy.jpg'
+import Pyke from '../tftImages/championImages/Pyke.jpg'
+import RekSai from '../tftImages/championImages/RekSai.jpg'
+import Rengar from '../tftImages/championImages/Rengar.jpg'
+import Sejuani from '../tftImages/championImages/Sejuani.jpg'
+import Shen from '../tftImages/championImages/Shen.jpg'
+import Shyvana from '../tftImages/championImages/Shyvana.jpg'
+import Swain from '../tftImages/championImages/Swain.jpg'
+import Tristana from '../tftImages/championImages/Tristana.jpg'
+import TwistedFate from '../tftImages/championImages/TwistedFate.jpg'
+import Varus from '../tftImages/championImages/Varus.jpg'
+import Vayne from '../tftImages/championImages/Vayne.jpg'
+import Veigar from '../tftImages/championImages/Veigar.jpg'
+import Vi from '../tftImages/championImages/Vi.jpg'
+import Volibear from '../tftImages/championImages/Volibear.jpg'
+import Warwick from '../tftImages/championImages/Warwick.jpg'
+import Yasuo from '../tftImages/championImages/Yasuo.jpg'
+import Zed from '../tftImages/championImages/Zed.jpg'
+
+export const findImage = (name) => {
+  const newString = name.replace(/[^A-Z0-9]/ig, "");
+  let newestString = newString.replace(/'/g, '');
+  if(newestString === 'ChoGath') newestString = 'Chogath';
+  else if(newestString === 'KhaZix') newestString = 'Khazix';
+  return Images.find(el => el.includes(newestString))
+}
+
+export const Images = [
+  Aatrox, Ahri, Akali, Anivia, Ashe, AurelionSol, Blitzcrank, Brand, Braum, Camille, Chogath, Darius, Draven, Elise, Evelynn, Fiora, Gangplank, Garen, Gnar, Graves, Jayce, Jinx, Karthus, Kassadin, Katarina, Kayle, Kennen, Khazix, Kennen, Khazix, Kindred, Leona, Lissandra, Lucian, Lulu, MissFortune, Mordekaiser, Morgana, Nidalee, Pantheon, Poppy, Pyke, RekSai, Rengar, Sejuani, Shen, Shyvana, Swain, Tristana, TwistedFate, Varus, Vayne, Veigar, Vi, Volibear, Warwick, Yasuo, Zed
+]
