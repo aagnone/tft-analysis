@@ -1,10 +1,8 @@
-import React from 'react'
-import BoardContextProvider from './context/BoardContext'
-import ChampionContextProvider from './context/Champions'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CompBuilder from './pages/CompBuilder';
-
-// const addOrigin = origins.map(origin => <AddChampions filter={origin} />)
+import React from "react";
+import BoardContextProvider from "./context/BoardContext";
+import ChampionContextProvider from "./context/Champions";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import CompBuilder from "./pages/CompBuilder";
 
 const App = () => {
   return (
@@ -17,7 +15,7 @@ const App = () => {
         </ChampionContextProvider>
       </Router>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
