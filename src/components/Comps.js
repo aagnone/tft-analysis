@@ -1,5 +1,4 @@
-// TODO read hash url for paramaters. check parameters to make a build sharable
-// TODO make this into object > name="", comp: [], items: []
+
 export const GuardianSS = {
   name: 'Guardian ShapeShifters',
   comp: [

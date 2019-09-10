@@ -2,14 +2,12 @@ import React, { useState, useContext, useEffect } from "react";
 import { BoardContext } from "../context/BoardContext";
 import { ChampionContext } from "../context/Champions";
 import { BurstRangers, VoidAssassin, GuardianSS, HybridSS } from "./Comps";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import AutosizeInput from "react-input-autosize";
 
 const SelectComp = () => {
   const { setComp, createURL } = useContext(BoardContext);
   const { buildComp } = useContext(ChampionContext);
   const [comp, selectComp] = useState({ name: "", team: [], items: "" });
-  const [shareable, setShareable] = useState("");
+
 
   const handleChange = e => {
     selectComp({ ...comp, name: e.target.value });
@@ -47,10 +45,6 @@ const SelectComp = () => {
 
   const recoItems = () => comp.items.map(item => <li>{item}</li>);
 
-  const handleCreateURL = () => {
-    setShareable(createURL());
-  };
-
   return (
     <div>
       <label>Select Comp</label>
@@ -64,13 +58,6 @@ const SelectComp = () => {
       <p>Selected Comp: {comp.name}</p>
       <p>Recommended Items: </p>
       <ul>{comp.items.length > 1 ? recoItems() : ""}</ul>
-      <button onClick={handleCreateURL}>Share Composition!</button>
-      <div style={{ display: shareable ? "block" : "none" }}>
-        <AutosizeInput name="copyComposition" value={shareable} readOnly />
-        <CopyToClipboard text={shareable} onCopy={() => console.log(shareable)}>
-          <button>Copy</button>
-        </CopyToClipboard>
-      </div>
     </div>
   );
 };

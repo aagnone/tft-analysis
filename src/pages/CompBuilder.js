@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import Board from "../components/Board";
-import SelectComp from "../components/SelectComp";
 import AddSectionRevised from "../components/AddSectionRevised";
 import { ChampionContext } from "../context/Champions";
 import uuid from "uuid/v1";
 import { BoardContext } from "../context/BoardContext";
+import ShareComp from '../components/ShareComp'
 
 const CompBuilder = props => {
   let params = new URLSearchParams(props.location.search);
@@ -42,11 +42,11 @@ const CompBuilder = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
-      <SelectComp />
+    <>
+      <ShareComp />
       <Board />
       <AddSectionRevised />
-    </div>
+    </>
   );
 };
 

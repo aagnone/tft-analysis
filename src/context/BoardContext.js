@@ -53,7 +53,7 @@ const BoardContextProvider = props => {
   };
 
   const createURL = () => {
-    let urlString = "http://localhost:3000/?comp=";
+    let urlString = "http://localhost:3000/builder?comp=";
     onBoard.forEach(obChamp => (urlString += constructURL(obChamp)));
     return urlString;
   };
