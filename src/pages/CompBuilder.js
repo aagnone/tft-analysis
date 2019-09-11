@@ -23,7 +23,6 @@ const CompBuilder = props => {
         if (i % 2 === 0) champions.push(val);
         else positions.push(val.match(/.{1,1}/g));
       });
-      console.log(champions, positions);
       champions.forEach((val, i) => {
         let newString = val.charAt(0).toUpperCase() + val.slice(1);
         let indexNum = champs.findIndex(element =>
@@ -45,7 +44,6 @@ const CompBuilder = props => {
     <>
       <ShareComp />
       <Board />
-      <AddSectionRevised />
     </>
   );
 };

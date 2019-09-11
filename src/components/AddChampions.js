@@ -21,7 +21,6 @@ const AddChampions = ({ filter, isOrigin }) => {
 
   return (
     <div>
-      <h1>{filter}</h1>
       {isOrigin ? buttonsOrigin : buttonsClasses}
     </div>
   );

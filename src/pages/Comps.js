@@ -10,7 +10,6 @@ const Comps = () => {
       <SelectComp />
       <ShareComp />
       <Board />
-      <AddSectionRevised />
     </>
   );
 };

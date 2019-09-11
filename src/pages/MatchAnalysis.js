@@ -11,7 +11,6 @@ const MatchAnalysis = () => {
       <p>Comp at each point is sharable</p>
       <ShareComp />
       <Board />
-      <AddSectionRevised />
     </>
   );
 }

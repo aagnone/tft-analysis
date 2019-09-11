@@ -7,6 +7,7 @@ import Comps from "./pages/Comps";
 import Home from './pages/Home'
 import Footer from "./components/Footer";
 import MatchAnalysis from "./pages/MatchAnalysis";
+import AddSectionRevised from './components/AddSectionRevised'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/comps" component={Comps} />
               <Route path="/guides" component={Home} />
             </Switch>
+            <AddSectionRevised />
 
           </BoardContextProvider>
         </ChampionContextProvider>
