@@ -30,7 +30,6 @@ const App = () => {
               <Route path="/guides" component={Home} />
             </Switch>
             <AddSectionRevised />
-
           </BoardContextProvider>
         </ChampionContextProvider>
       </Router>

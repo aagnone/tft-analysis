@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 import Board from "../components/Board";
-import AddSectionRevised from "../components/AddSectionRevised";
 import { ChampionContext } from "../context/Champions";
 import uuid from "uuid/v1";
 import { BoardContext } from "../context/BoardContext";

@@ -1,6 +1,5 @@
 import React from 'react'
 import Board from "../components/Board";
-import AddSectionRevised from "../components/AddSectionRevised";
 import ShareComp from '../components/ShareComp'
 
 const MatchAnalysis = () => {
