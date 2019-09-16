@@ -8,10 +8,12 @@ import Home from './pages/Home'
 import Footer from "./components/Footer";
 import MatchAnalysis from "./pages/MatchAnalysis";
 import AddSectionRevised from './components/AddSectionRevised'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const App = () => {
   return (
     <div>
+      <CssBaseline />
       <Router>
         <ChampionContextProvider>
           <BoardContextProvider>

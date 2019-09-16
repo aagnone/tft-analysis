@@ -1,8 +1,23 @@
 import React, { useContext } from "react";
 import { ChampionContext } from "../context/Champions";
-import AddButton from "./AddButton";
+import ChampionCardFront from "./ChampionCardFront";
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    overflow: 'hidden'
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 const AddChampions = ({ filter, isOrigin }) => {
+  const classes = useStyles();
   const { champs } = useContext(ChampionContext);
 
   const buttonsOrigin = champs
@@ -10,18 +25,20 @@ const AddChampions = ({ filter, isOrigin }) => {
       if (item.origin[0] === filter || item.origin[1] === filter) return item;
       return null;
     })
-    .map(champ => <AddButton key={champ.id} name={champ.name} />);
+    .map(champ => <Grid item xs ><ChampionCardFront key={champ.id} champ={champ} /></Grid>);
 
   const buttonsClasses = champs
     .filter(item => {
       if (item.class[0] === filter || item.class[1] === filter) return item;
       return null;
     })
-    .map(champ => <AddButton key={champ.id} name={champ.name} />);
+    .map(champ => <Grid item xs><ChampionCardFront key={champ.id} champ={champ} /></Grid>);
 
   return (
-    <div>
-      {isOrigin ? buttonsOrigin : buttonsClasses}
+    <div className={classes.root}>
+      <div style={{ display: 'grid', gridTemplateColumns: `repeat(4, 1fr)` }}>
+        {isOrigin ? buttonsOrigin : buttonsClasses}
+      </div>
     </div>
   );
 };

@@ -3,10 +3,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { ChampionContext } from "../context/Champions";
 import AddChampions from "./AddChampions";
-import "react-tabs/style/react-tabs.css";
 import SwipeableViews from 'react-swipeable-views';
 import TabPanel from './TabPanel'
 import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+
 
 
 
@@ -34,7 +37,7 @@ const AddSectionRevised = () => {
     <Tab label={origin} key={origin} {...a11yProps(i)} />
   ));
   const allOriginButtons = origins.map((origin, i) => (
-    <TabPanel value={value}  index={i} dir="ltr" key={`panel${origin}`}>
+    <TabPanel value={value} index={i} dir="ltr" key={`panel${origin}`}>
       <AddChampions key={origin} filter={origin} isOrigin={isOrigin} />
     </TabPanel>
   ));
@@ -50,10 +53,21 @@ const AddSectionRevised = () => {
   ));
 
   return (
-    <>
-      <button onClick={() => setOrigin(!isOrigin)}>
+    <div style={{ position: 'absolute', top: 0, right: 0, width: '50vw', height: '60vh', padding: '10px' }}>
+      {/* <button onClick={() => setOrigin(!isOrigin)}>
         {isOrigin ? "By Class" : "By Origin"}
-      </button>
+      </button> */}
+      <Grid item style={{ padding: '5px', marginBottom: '15px' }}>
+        <ButtonGroup
+          variant="contained"
+          color="primary"
+          aria-label="full-width contained primary button group"
+        >
+          <Button onClick={() => setOrigin(true)}>By Origin</Button>
+          <Button onClick={() => setOrigin(false)}>By Class</Button>
+          <Button>By Grid</Button>
+        </ButtonGroup>
+      </Grid>
       <AppBar position="static" color="default">
         <Tabs
           value={value}
@@ -70,10 +84,11 @@ const AddSectionRevised = () => {
       <SwipeableViews
         index={value}
         onChangeIndex={handleChangeIndex}
+        style={{ padding: ' 25px 5px' }}
       >
         {isOrigin ? allOriginButtons : allClassButtons}
       </SwipeableViews>
-    </>
+    </div>
   );
 };
 

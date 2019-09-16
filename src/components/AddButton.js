@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { BoardContext } from '../context/BoardContext'
 import { ChampionContext } from '../context/Champions'
 import { findImage } from './Images'
-import {StyledChampion} from '../styledComponents/AddChampion'
+import { StyledChampion } from '../styledComponents/AddChampion'
 
 const AddButton = (props) => {
   const { addChampion } = useContext(BoardContext)
@@ -13,9 +13,9 @@ const AddButton = (props) => {
     addChampion(champs[championToAdd]);
   }
 
-  const champImage = findImage(props.name)
+  const champImage = findImage(props.champ.name)
   return (
-    <StyledChampion role="button" href="#"  champImage={champImage} onClick={() => handleAddChamp(props.name)} />
+    <StyledChampion role="button" href="#" champImage={champImage} onClick={() => handleAddChamp(props.champ.name)} />
   )
 }
 
