@@ -3,11 +3,14 @@ import { useDrop } from 'react-dnd'
 import ItemTypes from '../util/ItemTypes'
 
 const hexagonInside = {
-  width: '100%',
-  height: '100%',
+  width: '50px',
+  height: '50px',
   background: 'black',
-  position: 'relative',
-  overflow: 'hidden'
+  position: 'absolute',
+  overflow: 'hidden',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
 }
 
 const Droppable = ({ x, y, move, children }) => {

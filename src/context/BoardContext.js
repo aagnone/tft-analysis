@@ -21,6 +21,12 @@ const BoardContextProvider = props => {
     setBoard(tempArray);
   };
 
+  const addItem = (_id, item) => {
+    const tempArray = [...onBoard]
+    let champIndex = tempArray.findIndex(obj => obj.id === _id);
+
+  }
+
   const setComp = comp => {
     setBoard(comp);
   };

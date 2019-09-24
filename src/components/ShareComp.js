@@ -3,10 +3,16 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import AutosizeInput from "react-input-autosize";
 import { BoardContext } from "../context/BoardContext";
 
+
+
 const ShareComp = () => {
   const { createURL } = useContext(BoardContext);
   const [shareable, setShareable] = useState("");
   const [copied, setCopied] = useState(false)
+
+  const copiedStyle = {
+    color: 'red', display: 'inline-block', fontSize: '8px', transition: 'all .3s ease', opacity: copied ? 1 : 0, marginLeft: '8px'
+  }
 
   const handleCopied = () => {
     setCopied(true);
@@ -26,7 +32,7 @@ const ShareComp = () => {
         <CopyToClipboard text={shareable} onCopy={handleCopied}>
           <button>Copy</button>
         </CopyToClipboard>
-        <p style={{color: 'red', display: 'inline-block', fontSize: '8px', transition: 'all .3s ease', opacity: copied ? 1 : 0, marginLeft: '8px'}}>Copied!</p>
+        <p style={copiedStyle}>Copied!</p>
       </div>
     </>
   );

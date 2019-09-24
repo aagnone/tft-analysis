@@ -25,14 +25,14 @@ const AddChampions = ({ filter, isOrigin }) => {
       if (item.origin[0] === filter || item.origin[1] === filter) return item;
       return null;
     })
-    .map(champ => <Grid item xs ><ChampionCardFront key={champ.id} champ={champ} /></Grid>);
+    .map(champ => <Grid item xs key={champ.id} ><ChampionCardFront champ={champ} /></Grid>);
 
   const buttonsClasses = champs
     .filter(item => {
       if (item.class[0] === filter || item.class[1] === filter) return item;
       return null;
     })
-    .map(champ => <Grid item xs><ChampionCardFront key={champ.id} champ={champ} /></Grid>);
+    .map(champ => <Grid item xs key={champ.id}><ChampionCardFront champ={champ} /></Grid>);
 
   return (
     <div className={classes.root}>

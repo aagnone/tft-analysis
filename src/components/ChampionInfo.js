@@ -2,11 +2,10 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { Typography } from '@material-ui/core';
 
-const ProductInfo = ({ name, cost, origin, cclass }) => (
+const ChampionInfo = ({ name, cost, origin, cclass }) => (
   <Box px={2} pb={2}>
     <Typography
       variant={'subtitle1'}
-      secondFamily
       weight={'bold'}
       gutterBottom
     >
@@ -27,4 +26,4 @@ const ProductInfo = ({ name, cost, origin, cclass }) => (
   </Box>
 );
 
-export default ProductInfo;
+export default ChampionInfo;

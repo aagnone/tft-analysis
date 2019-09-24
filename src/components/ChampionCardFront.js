@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { BoardContext } from '../context/BoardContext'
 import { ChampionContext } from '../context/Champions'
 import { findImage } from './Images'
@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { makeStyles } from '@material-ui/styles';
 import ChampionInfo from './ChampionInfo';
+import InfoBack from './InfoBack';
 
 const useStyles = makeStyles(({ palette }) => ({
   buttonBase: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles(({ palette }) => ({
 
 const ChampionCardFront = (props) => {
   const classes = useStyles();
+  const [showed, setShowed] = useState(false);
   const { addChampion } = useContext(BoardContext)
   const { champs, getChampion } = useContext(ChampionContext)
 
@@ -61,7 +63,9 @@ const ChampionCardFront = (props) => {
     }
   }
   return (
-    <ButtonBase className={classes.buttonBase} onClick={() => handleAddChamp(props.champ.name)}>
+    <ButtonBase className={classes.buttonBase} onClick={() => handleAddChamp(props.champ.name)} onFocus={() => setShowed(true)}
+      onMouseOver={() => setShowed(true)}
+      onMouseLeave={() => setShowed(false)}>
       <Box
         height={'100%'}
         {...bordered && {
@@ -78,6 +82,19 @@ const ChampionCardFront = (props) => {
           </div>
         </Box>
         <ChampionInfo name={props.champ.name} cost={props.champ.cost} origin={props.champ.origin} cclass={props.champ.class} />
+      </Box>
+      <Box
+        {...bordered && {
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '100%',
+          zIndex: '10'
+        }}
+        style={{ opacity: showed ? .85 : 0, transition: 'all .5s ease', backgroundColor: '#333', color: '#fff' }}
+      >
+        <InfoBack items={props.champ.items} stats={props.champ.stats} />
       </Box>
     </ButtonBase>
   );
